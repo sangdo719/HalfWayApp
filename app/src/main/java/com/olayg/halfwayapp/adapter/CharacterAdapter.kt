@@ -1,5 +1,6 @@
 package com.olayg.halfwayapp.adapter
 
+import android.util.Log
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.olayg.halfwayapp.databinding.ItemCharacterBinding
@@ -20,9 +21,11 @@ class CharacterAdapter(
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
         holder.loadCharacter(characters[position])
+        Log.d("CharacterAdapter onBindViewHolder: ", "Loaded item")
     }
 
-    override fun getItemCount() = characters.size.minus(characters.size)
+    // 4th Modification
+    override fun getItemCount() = characters.size
 
     class CharacterViewHolder(
         private val binding: ItemCharacterBinding
@@ -30,6 +33,7 @@ class CharacterAdapter(
 
         fun loadCharacter(character: Character) = with(binding) {
             tvName.text = character.name
+            ivPhoto.loadUrl(character.image?.icon) // 3rd modification
         }
 
         companion object {

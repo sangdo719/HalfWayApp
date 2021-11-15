@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/categoryFragment">
+
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.olayg.halfwayapp.view.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="character"
+            app:argType="com.olayg.halfwayapp.model.custom.Character" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.olayg.halfwayapp.view.CategoryFragment"
+        android:label="CategoryFragment" >
+        <action
+            android:id="@+id/goToDetailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
