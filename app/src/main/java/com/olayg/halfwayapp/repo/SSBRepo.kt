@@ -12,7 +12,8 @@ object SSBRepo {
 
     suspend fun getAllCharacters(): List<Character> = try {
         smashLoungeService.getAllCharacters().map { characterResponse ->
-            Character.convertToCharacter(characterResponse, getImage(characterResponse))
+            val data = Character.convertToCharacter(characterResponse, getImage(characterResponse))
+            data
         }
     } catch (ex: Exception) {
         Log.e("SSB_Repo: ", "Caught getAllCharacters $ex")
@@ -26,3 +27,4 @@ object SSBRepo {
         null
     }
 }
+

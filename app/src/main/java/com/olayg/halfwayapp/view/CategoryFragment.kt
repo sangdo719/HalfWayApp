@@ -1,13 +1,16 @@
 package com.olayg.halfwayapp.view
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.google.gson.Gson
 import com.olayg.halfwayapp.adapter.CharacterAdapter
 import com.olayg.halfwayapp.databinding.FragmentCategoryBinding
 import com.olayg.halfwayapp.model.custom.Character
@@ -31,7 +34,7 @@ class CategoryFragment : Fragment() {
 
         viewModel.categories.observe(viewLifecycleOwner) { characters ->
             binding.rvCharacters.adapter = CharacterAdapter(characters, ::characterSelected)
-            Log.d("main_activity Character List: ", characters.toString())
+            binding.progress.isVisible = false
         }
     }
 

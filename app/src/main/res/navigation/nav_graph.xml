@@ -5,15 +5,6 @@
     android:id="@+id/nav_graph.xml"
     app:startDestination="@id/categoryFragment">
 
-
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.olayg.halfwayapp.view.DetailFragment"
-        android:label="DetailFragment" >
-        <argument
-            android:name="character"
-            app:argType="com.olayg.halfwayapp.model.custom.Character" />
-    </fragment>
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.olayg.halfwayapp.view.CategoryFragment"
@@ -22,4 +13,13 @@
             android:id="@+id/goToDetailFragment"
             app:destination="@id/detailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.olayg.halfwayapp.view.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="character"
+            app:argType="com.olayg.halfwayapp.model.custom.Character" />
+    </fragment>
+
 </navigation>

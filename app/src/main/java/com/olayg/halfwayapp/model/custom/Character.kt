@@ -25,5 +25,14 @@ data class Character(
             speedRank = characterResponse.fallSpeed,
             gifs = characterResponse.gifs
         )
+
+        fun empty() = Character(
+            name = "",
+            image = Image("",""),
+            rank = "",
+            weightRank = "",
+            speedRank = "",
+            gifs = emptyList<Gif>()
+        )
     }
 }
